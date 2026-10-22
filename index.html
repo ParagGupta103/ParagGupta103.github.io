@@ -1,184 +1,319 @@
-<!DOCTYPE HTML>
-<!--
-	Hyperspace by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Portfolio Website - PG</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Parag Gupta | Software Engineer</title>
+<meta name="description" content="Parag Gupta, software engineer. Cloud data pipelines and ML systems in Python, Java and SQL on AWS and GCP.">
+<meta property="og:title" content="Parag Gupta | Software Engineer">
+<meta property="og:description" content="Parag Gupta, software engineer. Cloud data pipelines and ML systems in Python, Java and SQL on AWS and GCP.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://paraggupta103.github.io/">
+<meta name="theme-color" content="#f1f3f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0e1319" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131922'/%3E%3Ctext x='29' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='28' fill='%23fff'%3EPG%3C/text%3E%3Ccircle cx='52' cy='40' r='4' fill='%23ff9455'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<nav>
+  <div class="wrap">
+    <a class="mono-mark" href="#top">PG<span>.</span></a>
+    <div class="nav-r">
+      <ul>
+        <li class="wide"><a href="#skills">Skills</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#demos">Demos</a></li>
+        <li class="wide"><a href="#projects">Projects</a></li>
+        <li><a href="#playground">Play</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="term-btn" data-term aria-label="Open terminal">&gt;_</button>
+    </div>
+  </div>
+</nav>
 
-		<!-- Sidebar -->
-			<section id="sidebar">
-				<div class="inner">
-					<nav>
-						<ul>
-							<li><a href="#intro">Welcome</a></li>
-							<li><a href="#one">About</a></li>
-							<li><a href="#two">Projects</a></li>
-							<li><a href="#three">Contact</a></li>
-						</ul>
-					</nav>
-				</div>
-			</section>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Software Engineer · Rutgers CS '26</span>
+      <h1>Parag <span>Gupta</span></h1>
+      <p class="lede">I build cloud data pipelines and ML systems in Python, Java and SQL on AWS and GCP. Five internships and externships so far, from tariff models to rail-safety computer vision.</p>
+      <span class="now"><i></i>Now: Data &amp; Automation Analyst at KW International</span>
+      <div class="actions">
+        <a class="btn primary" href="#demos">Play with my projects</a>
+        <a class="btn" href="#journey">See the journey</a>
+        <a class="btn" href="resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+      </div>
+      <span class="hint">psst: press <kbd>`</kbd> or <button data-term>open the terminal</button></span>
+    </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <div class="scene" id="scene">
+      <div class="hud top">
+        <span>sources → ETL → checks → warehouse</span>
+        <span>drag to rotate</span>
+      </div>
+      <div class="hud bottom">
+        <div class="readout">
+          <div>delivered <span id="ok">0</span> · <span class="q">quarantined <span id="bad">0</span></span></div>
+          <div><span class="legend"><i style="background:var(--cool)"></i>clean record</span> <span class="legend"><i style="background:var(--accent)"></i>malformed</span></div>
+        </div>
+        <button class="refit" id="inject">Send a bad batch</button>
+      </div>
+      <div class="fallback">The 3D pipeline needs WebGL, which this browser has turned off.</div>
+    </div>
+  </div>
+</header>
 
-				<!-- Intro -->
-					<section id="intro" class="wrapper style1 fullscreen fade-up">
-						<div class="inner">
-							<h1>Parag Gupta</h1>
-							<p>Rising Junior at <a href="https://www.rutgers.edu/">Rutgers University</a><br />
-							Majoring in Computer Science and Data Science.</p>
-							<ul class="actions">
-								<li><a href="#one" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+<main>
+  <section class="band" id="skills">
+    <div class="wrap">
+      <div class="band-head">
+        <div><span class="eyebrow">Skills</span><h2>Toolkit</h2></div>
+      </div>
+      <dl class="stack">
+          <div><dt>Languages</dt><dd><span class="chip">Python</span><span class="chip">Java</span><span class="chip">C++</span><span class="chip">SQL</span></dd></div>
+          <div><dt>Cloud</dt><dd><span class="chip">AWS Bedrock</span><span class="chip">AWS Neptune</span><span class="chip">BigQuery</span><span class="chip">Vertex AI</span><span class="chip">Looker</span></dd></div>
+          <div><dt>Data</dt><dd><span class="chip">Airflow</span><span class="chip">dbt</span><span class="chip">Snowflake</span><span class="chip">PostgreSQL</span><span class="chip">MongoDB</span></dd></div>
+          <div><dt>Infra</dt><dd><span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">Terraform</span><span class="chip">GitLab</span><span class="chip">Git</span></dd></div>
+          <div><dt>Testing</dt><dd><span class="chip">pytest</span><span class="chip">Selenium</span><span class="chip">Playwright</span><span class="chip">Postman</span></dd></div>
+          <div><dt>ML / apps</dt><dd><span class="chip">PyTorch</span><span class="chip">YOLOv5</span><span class="chip">FastAPI</span><span class="chip">React</span></dd></div>
+        </dl>
+    </div>
+  </section>
 
-				<!-- One -->
-    				<section id="one" class="wrapper style3 fade-up">
-						<div class="inner">
-							<h2>About</h2>
-							<p>A hardworking student studying Data Science and Computer Science, seeking an opportunity to expand skills and gain valuable real-world experience in AI/Machine Learning. </p>
-							<div class="features">
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>TVD Associates via MBS Externship Exchange</h3>
-									<p>Led a diverse team to conduct target research on member engagement and implement data-driven solutions, resulting in improved engagement outcomes.Developed an innovative scoring system to analyze engagement datasets accurately.</p>
-								</section>
-								<section>
-									<span class="icon solid major fa-code"></span>
-									<h3>Rutgers IDEA & Ribbit Network</h3>
-									<p>Using R libraries cowplot and tidyverse, developed a Machine Learning algorithm to perform Linear Regression.Analyzed parameters such as temperature, time of day, and date of the month against CO2 levels to predict their relationship and forecast CO2 levels.</p>
-								</section>
-							</div>
-							<ul class="actions">
-								<li><a href="#two" class="button scrolly">Learn more</a></li>
-							</ul>
-						</div>
-					</section>
+  <section class="band" id="journey">
+    <div class="wrap">
+      <div class="band-head">
+        <div><span class="eyebrow">Journey</span><h2>From New Delhi to Carson</h2></div>
+      </div>
+      <div class="journey">
+        <div class="globe-wrap" id="globe">
+          <div class="hud top"><span id="g-stop">Stop 1 of 5 · New Delhi</span><span id="g-km">0 km so far</span></div>
+          <div class="g-label" id="g-label" hidden></div>
+          <div class="hud bottom"><span>scroll the stops or step through</span><div class="g-nav"><button id="g-prev" aria-label="Previous stop">← Prev</button><button id="g-next" aria-label="Next stop">Next →</button></div></div>
+          <div class="fallback">The globe needs WebGL, which this browser has turned off.</div>
+        </div>
+        <ol class="stops hl" id="stops">
+          <li class="stop active" tabindex="0">
+            <header><span class="n">01</span><h3>New Delhi, India</h3><span class="when">May – Jul 2024</span></header>
+            <p class="co"><b>Apollo Tyres</b> · Software Engineering Intern</p>
+            <p>Built a GenAI RAG pipeline on AWS Bedrock that made <strong>500+ scanned documents</strong> searchable, and cut graph query latency in AWS Neptune by <strong>20%</strong>.</p>
+            <div class="tags"><span class="chip">AWS Bedrock</span><span class="chip">RAG</span><span class="chip">Neptune</span></div>
+          </li>
+          <li class="stop" tabindex="0">
+            <header><span class="n">02</span><h3>Rutherford, NJ</h3><span class="when">Sep – Dec 2024</span></header>
+            <p class="co"><b>Newmark Group</b> · Corporate Analyst Program</p>
+            <p>Replaced manual data entry with Python pipelines that turn fragmented financial data into Parquet for Looker dashboards, saving <strong>15+ hours a week</strong>.</p>
+            <div class="tags"><span class="chip">Python</span><span class="chip">Parquet</span><span class="chip">Looker</span></div>
+          </li>
+          <li class="stop" tabindex="0">
+            <header><span class="n">03</span><h3>Provo, UT</h3><span class="when">May – Aug 2025</span></header>
+            <p class="co"><b>Tarifflo</b> · Software Engineering Intern</p>
+            <p>Cut real-time logistics pipeline latency by <strong>30%</strong> on GCP, and modeled the entire Harmonized Tariff Schedule for customs valuation at <strong>98% accuracy</strong>.</p>
+            <div class="tags"><span class="chip">GCP</span><span class="chip">BigQuery</span><span class="chip">Vertex AI</span></div>
+          </li>
+          <li class="stop" tabindex="0">
+            <header><span class="n">04</span><h3>New Brunswick, NJ</h3><span class="when">Jan – May 2026</span></header>
+            <p class="co"><b>Collaborative Solutions</b> · Software Engineering Extern</p>
+            <p>Pulled Street View imagery for <strong>500+ rail crossings</strong> and deployed a YOLOv5 model that spots visual clutter with <strong>85% precision</strong>.</p>
+            <div class="tags"><span class="chip">YOLOv5</span><span class="chip">Google Maps API</span><a href="https://github.com/ParagGupta103/Grade-Crossing-Visual-Distractions-F26" target="_blank" rel="noopener">Code ↗</a></div>
+          </li>
+          <li class="stop" tabindex="0">
+            <header><span class="n">05</span><h3>Carson, CA</h3><span class="when">Aug 2026 – now</span></header>
+            <p class="co"><b>KW International</b> · Data &amp; Automation Analyst</p>
+            <p>Automating last-mile shipping quotes across <strong>4 carrier APIs</strong>, saving <strong>10+ hours a week</strong>, plus a warehouse cost model built from 3PL shipment history.</p>
+            <div class="tags"><span class="chip">Python</span><span class="chip">Carrier APIs</span></div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
 
-				<!-- Two -->
-					<section id="two" class="wrapper style2 spotlights">
-						<section>
-							<a href="#" class="image"><img src="images/medical.webp" alt="" data-position="top center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Medical ChatBott</h2>
-									<p>Built a medical chatbot with Llama2 & Chainlit. Processed medical text data with Langchain to power informative Q&A. </p>
-									<ul class="actions">
-										<li><a href="https://github.com/ParagGupta103/AI-Project" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/sa.jpeg" alt="" data-position="25% 25%" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Sentiment Analysis of Movie Reviews</h2>
-									<p>Leveraged NLP techniques and libraries such as NLTK and TensorFlow, to effectively interpret and classify emotions from textual data, thereby improving the analysis of customer feedback. Additionally,used machine learning methodologies using Scikit-learn and Pandas to handle and analyze datasets.</p>
-									<ul class="actions">
-										<li><a href="https://colab.research.google.com/drive/1_a0RvkLWMRsDHNfCgCxpjFsYnb_GZs6U?usp=sharing" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-						<section>
-							<a href="#" class="image"><img src="images/opal.jpeg" alt="" data-position="center center" /></a>
-							<div class="content">
-								<div class="inner">
-									<h2>Opal</h2>
-									<p>Developed algorithms for Lexer of a new programming language, significantly reducing tokenization time. Implemented an interpreter for Opal, contributing to an increase in language functionality and usability.</p>
-									<ul class="actions">
-										<li><a href="https://github.com/AlexV-01/opal" class="button">Learn more</a></li>
-									</ul>
-								</div>
-							</div>
-						</section>
-					</section>
-				<!-- Three -->
-					<section id="three" class="wrapper style1 fade-up">
-						<div class="inner">
-							<h2>Get in touch</h2>
-							<div class="split style1">
-								<section>
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="name">Name</label>
-												<input type="text" name="name" id="name" />
-											</div>
-											<div class="field half">
-												<label for="email">Email</label>
-												<input type="text" name="email" id="email" />
-											</div>
-											<div class="field">
-												<label for="message">Message</label>
-												<textarea name="message" id="message" rows="5"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><a href="paragguptaus@gmail.com" class="button submit">Send Message</a></li>
-										</ul>
-									</form>
-								</section>
-								<section>
-									<ul class="contact">
-										<li>
-											<h3>Address</h3>
-											<span>290 George St.<br />
-											New Brunswick, NJ 08901<br />
-											USA</span>
-										</li>
-										<li>
-											<h3>Email</h3>
-											<a href="#">paragguptus@gmail.com</a>
-										</li>
-										<li>
-											<h3>Phone</h3>
-											<span>(732) 558-4884</span>
-										</li>
-										<li>
-											<h3>Social</h3>
-											<ul class="icons">
-												<li><a href="https://github.com/ParagGupta103" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-												<li><a href="https://www.linkedin.com/in/parag-gupta-337057100/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-											</ul>
-										</li>
-									</ul>
-								</section>
-							</div>
-						</div>
-					</section>
+  <section class="band" id="demos">
+    <div class="wrap">
+      <div class="band-head">
+        <div><span class="eyebrow">Demos</span><h2>Play with my projects</h2></div>
+        <div class="tabs" id="demo-tabs" role="tablist" aria-label="Demos">
+          <button role="tab" id="tab-motolens" data-demo="motolens" aria-controls="panel-motolens" aria-selected="true">MotoLens</button>
+          <button role="tab" id="tab-dag" data-demo="dag" aria-controls="panel-dag" aria-selected="false" tabindex="-1">Data warehouse</button>
+          <button role="tab" id="tab-taxi" data-demo="taxi" aria-controls="panel-taxi" aria-selected="false" tabindex="-1">NYC taxi</button>
+        </div>
+      </div>
+      <div class="demos">
 
-			</div>
+        <article class="demo" id="panel-motolens" role="tabpanel" aria-labelledby="tab-motolens">
+          <div class="demo-head">
+            <div>
+              <span class="eyebrow">MotoLens</span>
+              <h3>Can you beat the model?</h3>
+              <p>MotoLens picks from 196 makes, models and years. This is a real prediction it made. Can you match it?</p>
+            </div>
+          </div>
+          <div class="ml-photo" id="ml-photo">
+            <img src="assets/img/motolens-caliber.jpg" alt="A silver compact wagon photographed from the front left in a dark studio" width="720" height="467">
+            <div class="grid"></div><div class="beam"></div>
+            <span class="ml-tag" id="ml-tag">ResNet-50 · 196 classes · ready</span>
+          </div>
+          <div class="ml-side">
+            <p class="ml-q">What car is this?</p>
+            <div class="ml-opts" id="ml-opts"></div>
+            <div class="ml-result" id="ml-result" hidden>
+              <p class="verdict" id="ml-verdict"></p>
+              <p class="said">MotoLens said <b>Dodge Caliber Wagon 2012</b></p>
+              <div class="meter"><div class="lab"><span>model confidence</span><b>15.32%</b></div><div class="track"><div class="fill" id="ml-conf"></div></div></div>
+              <div class="meter chance"><div class="lab"><span>random guess (1 in 196)</span><b>0.51%</b></div><div class="track"><div class="fill" id="ml-chance"></div></div></div>
+              <p class="fine">About 30× better than chance. Near-twins like the 2007 Caliber split the probability, so a correct answer can still carry low confidence.</p>
+              <div class="ml-actions"><button id="ml-again">Play again</button><a href="https://paraggupta103.github.io/MotoLens/" target="_blank" rel="noopener">Try your own photo ↗</a></div>
+            </div>
+          </div>
+        </article>
 
-		<!-- Footer -->
-			<footer id="footer" class="wrapper style1-alt">
-				<div class="inner">
-					<ul class="menu">
-						<li>&copy; Untitled. All rights reserved.</li>
-					</ul>
-				</div>
-			</footer>
+        <article class="demo" id="panel-dag" role="tabpanel" aria-labelledby="tab-dag" hidden>
+          <div class="demo-head">
+            <div>
+              <span class="eyebrow">Stock Market Data Warehouse</span>
+              <h3>Run the DAG, then break it</h3>
+              <p>Trigger a load of S&amp;P 500 prices. Then let the upstream API send null close prices and watch the dbt tests stop bad data before it reaches the dashboards.</p>
+            </div>
+            <p class="fine demo-fine">Simulated run. Task and test names are illustrative, and row counts and timings are generated in the browser. The pattern is the real one: test before you publish.</p>
+          </div>
+          <div class="dag-wrap">
+            <div class="dag-bar">
+              <div class="ctl">
+                <button class="refit" id="dag-run">Trigger run</button>
+                <label class="check"><input type="checkbox" id="dag-bad"> Upstream API sends null close prices</label>
+              </div>
+              <div class="history" id="dag-hist"><span>runs</span></div>
+            </div>
+            <ol class="dag" id="dag"></ol>
+            <div class="log" id="dag-log" aria-live="polite"></div>
+          </div>
+        </article>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+        <article class="demo" id="panel-taxi" role="tabpanel" aria-labelledby="tab-taxi" hidden>
+          <div class="demo-head">
+            <div>
+              <span class="eyebrow">NYC Taxi Analytics</span>
+              <h3>When does the city ride?</h3>
+              <p>Scrub through the day and watch pickups shift between Midtown, the Village and the airports. Then race the query from before and after optimization.</p>
+            </div>
+            <p class="fine demo-fine">Simple mockup. The pickup numbers are made up but shaped like real taxi patterns. The query times are the project's own: 12 s down to 0.8 s.</p>
+          </div>
+          <div class="taxi-map">
+            <div class="tiles" id="tiles" role="img" aria-label="Pickups by zone"></div>
+            <div class="hour-row">
+              <div class="ctrl"><label for="taxi-hr">Hour of day <output id="taxi-hr-o"></output></label><input type="range" id="taxi-hr" min="0" max="23" value="18"></div>
+              <button class="play" id="taxi-play" type="button">▶ Play day</button>
+            </div>
+          </div>
+          <div class="taxi-side">
+            <div class="taxi-stats">
+              <div><span class="eyebrow">Pickups this hour</span><b id="taxi-total"></b></div>
+              <div><span class="eyebrow">Busiest zone</span><b id="taxi-top"></b></div>
+            </div>
+            <div class="ctrl"><span class="lab">City total by hour</span><div class="spark" id="spark" aria-hidden="true"></div></div>
+            <div class="race">
+              <span class="eyebrow">The query</span>
+              <pre class="sql" id="sql"></pre>
+              <div class="meter before"><div class="lab"><span>before optimizing</span><b id="q-before">12.0 s</b></div><div class="track"><div class="fill" id="q-bf" style="width:100%"></div></div></div>
+              <div class="meter"><div class="lab"><span>after</span><b id="q-after">0.8 s</b></div><div class="track"><div class="fill" id="q-af" style="width:6.7%"></div></div></div>
+              <div class="ml-actions"><button id="q-run" type="button">Race the query</button><span class="fine">replayed at 4× speed</span></div>
+            </div>
+          </div>
+        </article>
 
-	</body>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="projects">
+    <div class="wrap">
+      <div class="band-head">
+        <div><span class="eyebrow">Projects</span><h2>Things I've built</h2></div>
+      </div>
+      <div class="projects">
+        <article class="card">
+          <div class="specimen"><span class="p">POST /predict  ← car.jpg</span>
+{ <span class="k">"label"</span>: "Dodge Caliber Wagon 2012",
+  <span class="k">"confidence"</span>: 0.1532 }<span class="bar"><span style="--w:15.32%"></span></span></div>
+          <div class="card-body">
+            <h3>MotoLens</h3>
+            <p>"Shazam for cars." A full-stack computer vision app serving a PyTorch ResNet-50 through FastAPI, trained on about 10,000 images across 196 car classes.</p>
+            <div class="tags"><span class="chip">PyTorch</span><span class="chip">FastAPI</span><span class="chip">React</span><span class="chip">PostgreSQL</span></div>
+            <div class="links"><a href="#demos" data-demo="motolens">Play the demo ↑</a><a href="https://paraggupta103.github.io/MotoLens/" target="_blank" rel="noopener">Live site ↗</a><a href="https://github.com/ParagGupta103/MotoLens" target="_blank" rel="noopener">Code ↗</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="specimen"><span class="p"># airflow DAG: stock_warehouse</span>
+<span class="tok" style="--i:0">extract_prices</span> » <span class="tok" style="--i:1">load_raw</span> » <span class="tok" style="--i:2">dbt_run</span> » <span class="tok" style="--i:3">dbt_test</span> » <span class="tok" style="--i:4">publish</span>
+<span class="p">targets: Snowflake, BigQuery</span></div>
+          <div class="card-body">
+            <h3>Stock Market Data Warehouse</h3>
+            <p>Airflow pipelines loading Snowflake and BigQuery, with optimized dbt models and data-quality checks that cut compute costs by 40%.</p>
+            <div class="tags"><span class="chip">Airflow</span><span class="chip">dbt</span><span class="chip">Snowflake</span><span class="chip">BigQuery</span></div>
+            <div class="links"><a href="#demos" data-demo="dag">Run the DAG ↑</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="specimen"><span class="p">-- avg fare by pickup zone</span>
+before  12.0 s<span class="bar hot"><span style="--w:100%"></span></span>after    0.8 s<span class="bar"><span style="--w:6.7%"></span></span></div>
+          <div class="card-body">
+            <h3>NYC Taxi Analytics</h3>
+            <p>ETL over NYC TLC trip records into a fact-and-dimension model on GCP, with Looker Studio heat maps. Query time in BigQuery dropped from 12 s to 0.8 s.</p>
+            <div class="tags"><span class="chip">GCP</span><span class="chip">BigQuery</span><span class="chip">pandas</span><span class="chip">Looker Studio</span></div>
+            <div class="links"><a href="#demos" data-demo="taxi">Explore the demo ↑</a><a href="https://github.com/ParagGupta103/NYC-Taxi-Data-Analysis" target="_blank" rel="noopener">Code ↗</a></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="playground">
+    <div class="wrap">
+      <div class="band-head">
+        <div><span class="eyebrow">Playground</span><h2>Side quests</h2></div>
+      </div>
+      <div class="pixel-grid" id="pixel-grid"></div>
+      <div class="feed">
+        <div class="feed-head"><h3>Latest pushes</h3><span class="feed-state" id="feed-state"><i></i><span>loading…</span></span></div>
+        <ol id="feed"></ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="contact">
+    <div class="wrap contact">
+      <div style="display:grid;gap:16px">
+        <span class="eyebrow">Contact</span>
+        <h2>Hiring for SDE I? Let's talk.</h2>
+      </div>
+      <div>
+        <div class="channel"><span class="k">Email</span><span class="v" id="email">paragguptaus@gmail.com</span><button class="copy" id="copy">Copy</button></div>
+        <div class="channel"><span class="k">GitHub</span><a class="v" href="https://github.com/ParagGupta103" target="_blank" rel="noopener">ParagGupta103 ↗</a></div>
+        <div class="channel"><span class="k">LinkedIn</span><a class="v" href="https://linkedin.com/in/parag3105" target="_blank" rel="noopener">parag3105 ↗</a></div>
+        <div class="channel"><span class="k">Resume</span><a class="v" href="resume.pdf" target="_blank" rel="noopener">Open PDF ↗</a></div>
+        <div class="channel"><span class="k">Based in</span><span class="v">Carson, CA</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Parag Gupta</span><span>Hosted on GitHub Pages · press ` for a terminal</span></div>
+</footer>
+
+<div class="term-wrap" id="term" hidden>
+  <div class="term" role="dialog" aria-modal="true" aria-label="Terminal">
+    <div class="term-bar"><span>parag@portfolio: ~</span><button id="term-close" aria-label="Close terminal">×</button></div>
+    <div class="term-out" id="term-out"></div>
+    <form class="term-line" id="term-form"><label for="term-in">parag@portfolio:~$</label><input id="term-in" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="send"></form>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
 </html>
