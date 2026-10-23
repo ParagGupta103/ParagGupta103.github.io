@@ -251,10 +251,11 @@ const Journey = (function () {
   $('g-prev').addEventListener('click', () => go(active - 1));
   $('g-next').addEventListener('click', () => go(active + 1));
 
-  // three.js globe
+  // three.js globe, built only when it nears the viewport so the first paint stays light
   const box = $('globe');
-  const renderer = makeRenderer(box);
-  if (renderer) {
+  function initGlobe() {
+    const renderer = makeRenderer(box);
+    if (!renderer) return;
     const R = 1.5, ARC_N = 80;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
@@ -271,7 +272,7 @@ const Journey = (function () {
       const i = r * 360 + c;
       return (mask.charCodeAt(i >> 3) >> (7 - (i & 7))) & 1;
     };
-    const dots = [], N = 26000, ga = Math.PI * (3 - Math.sqrt(5));
+    const dots = [], N = innerWidth < 700 ? 14000 : 26000, ga = Math.PI * (3 - Math.sqrt(5));
     for (let i = 0; i < N; i++) {
       const y = 1 - 2 * (i + 0.5) / N, lat = Math.asin(y) * 180 / Math.PI;
       const lon = ((i * ga * 180 / Math.PI) % 360) - 180;
@@ -362,7 +363,14 @@ const Journey = (function () {
       label.style.transform = `translate(${(tmp.x + 1) / 2 * box.clientWidth}px, ${(1 - tmp.y) / 2 * box.clientHeight}px)`;
       renderer.render(scene, camera);
     })(performance.now());
+    set(active);
   }
+  const nearGlobe = new IntersectionObserver(([e]) => {
+    if (!e.isIntersecting) return;
+    nearGlobe.disconnect();
+    initGlobe();
+  }, { rootMargin: '300px 0px' });
+  nearGlobe.observe(box);
   set(0);
   return { go, find: q => STOPS.findIndex(s => s.city.toLowerCase().startsWith(q.toLowerCase())) };
 })();
@@ -569,7 +577,7 @@ const Demos = (function () {
   render();
 })();
 
-// ---------- Playground: pixel sprites + GitHub feed ----------
+// ---------- Playground: pixel sprites ----------
 (function () {
   const SPRITES = {
     heart: ['.aa...aa..', 'aaaa.aaaa.', 'aaaaaaaaa.', 'aaaaaaaaa.', 'aaaaaaaaa.', '.aaaaaaa..', '..aaaaa...', '...aaa....', '....a.....', '..........'],
@@ -603,31 +611,6 @@ const Demos = (function () {
     });
   }
   paint(); onTheme(paint);
-
-  // Snapshot of public, non-fork repos by last push (Oct 22, 2026), used when the live API can't be reached
-  const SNAPSHOT = [
-    ['Card_Game', null, '2026-07-11'], ['Grade-Crossing-Visual-Distractions-F26', 'Python', '2026-04-27'],
-    ['Movie-Recommendation-Engine', null, '2026-04-20'], ['NeetCodePractice', 'Python', '2026-04-17'],
-    ['MotoLens', 'Python', '2026-04-03'], ['Online-Bookstore', 'C#', '2026-03-31'],
-  ];
-  const ago = iso => {
-    const d = Math.max(0, Math.round((Date.now() - new Date(iso)) / 864e5));
-    return d < 1 ? 'today' : d < 45 ? `${d} day${d > 1 ? 's' : ''} ago` : d < 540 ? `${Math.round(d / 30.4)} months ago` : `${Math.round(d / 365)} years ago`;
-  };
-  function show(items, live) {
-    const st = $('feed-state');
-    st.classList.toggle('live', live);
-    st.lastElementChild.textContent = live ? 'live from api.github.com' : 'snapshot from Oct 22, 2026 · live on the real site';
-    $('feed').innerHTML = items.map(([name, lang, pushed]) =>
-      `<li><a href="https://github.com/ParagGupta103/${name}" target="_blank" rel="noopener">${name}</a><span>${ago(pushed)}</span><span class="lang">${lang || '—'}</span></li>`).join('');
-  }
-  show(SNAPSHOT, false);
-  const ctl = 'AbortController' in window ? new AbortController() : null;
-  if (ctl) setTimeout(() => ctl.abort(), 5000);
-  fetch('https://api.github.com/users/ParagGupta103/repos?sort=pushed&per_page=12', ctl ? { signal: ctl.signal } : {})
-    .then(r => r.ok ? r.json() : Promise.reject(r.status))
-    .then(repos => show(repos.filter(r => !r.fork && r.name !== 'ParagGupta103').slice(0, 6).map(r => [r.name, r.language, r.pushed_at]), true))
-    .catch(() => {});
 })();
 
 // ---------- Terminal ----------

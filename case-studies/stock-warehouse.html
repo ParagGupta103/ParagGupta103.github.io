@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Stock Market Data Warehouse | Parag Gupta</title>
+<meta name="description" content="Case study: Airflow pipelines loading Snowflake and BigQuery, with optimized dbt models and data-quality checks that cut compute costs by 40%.">
+<meta property="og:title" content="Stock Market Data Warehouse | Parag Gupta">
+<meta property="og:description" content="Airflow pipelines loading Snowflake and BigQuery, with optimized dbt models and data-quality checks that cut compute costs by 40%.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paraggupta103.github.io/case-studies/stock-warehouse.html">
+<meta property="og:image" content="https://paraggupta103.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#008080" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0a1f" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<main class="wrap case">
+  <a class="case-back" href="../index.html#projects">← Back to the portfolio</a>
+
+  <article class="case-win">
+    <div class="case-bar"><span>stock_warehouse.txt</span><span aria-hidden="true">_ □ ×</span></div>
+    <div class="case-body">
+      <header style="display:grid;gap:12px">
+        <span class="eyebrow dark">Case study · data engineering</span>
+        <h1>Stock Market Data Warehouse</h1>
+        <p class="lede">Airflow pipelines that load stock price data into Snowflake and BigQuery, with dbt models and data-quality checks that stop bad rows before anything is published.</p>
+      </header>
+
+      <div class="case-stats">
+        <div><b>40%</b><span>lower compute cost from optimized dbt models and data-quality checks</span></div>
+        <!-- TODO(Parag): add a second real number here, e.g. rows loaded per run or run time -->
+      </div>
+
+      <section>
+        <h2>Architecture</h2>
+        <ol class="arch">
+          <li class="task"><code>Source data</code><small>Stock price data from upstream APIs</small></li>
+          <li class="task"><code>Airflow</code><small>Schedules the extract and load</small></li>
+          <li class="task"><code>Snowflake · BigQuery</code><small>Raw tables land in both warehouses</small></li>
+          <li class="task"><code>dbt models</code><small>Turn raw tables into clean, modeled tables</small></li>
+          <li class="task"><code>dbt tests</code><small>Data-quality checks gate what gets published</small></li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>What I built</h2>
+        <ul>
+          <li>Airflow pipelines that load stock price data into Snowflake and BigQuery.</li>
+          <li>dbt models over the raw tables, optimized to cut compute costs by 40%.</li>
+          <li>Data-quality checks that run before publishing, so bad data, such as null closing prices, fails the run instead of reaching dashboards.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Key decisions</h2>
+        <!-- TODO(Parag): these three are drafted from what the site already says. Replace them with your real reasoning. -->
+        <ul>
+          <!-- TODO(Parag): confirm why both warehouses are loaded -->
+          <li><strong>One extract, two warehouses.</strong> A single Airflow pipeline loads the same raw data into Snowflake and BigQuery, so the dbt models work from identical inputs on either platform.</li>
+          <!-- TODO(Parag): name the actual optimization, e.g. incremental models, partitioning or fewer full refreshes -->
+          <li><strong>Make each run do less work.</strong> I tuned the dbt models so routine runs process less data, which, together with the checks, cut compute costs by 40%.</li>
+          <!-- TODO(Parag): list the real tests you run -->
+          <li><strong>Test before you publish.</strong> Data-quality tests run after the models build. If one fails, publishing is skipped and dashboards keep the last good data instead of showing bad numbers.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Stack</h2>
+        <div class="tags"><span class="chip">Airflow</span><span class="chip">dbt</span><span class="chip">Snowflake</span><span class="chip">BigQuery</span><span class="chip">SQL</span><span class="chip">Python</span></div>
+      </section>
+
+      <div class="links">
+        <a href="../index.html#demos">Run the simulated DAG ↑</a>
+        <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="https://github.com/ParagGupta103" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </article>
+</main>
+<script src="../assets/js/retro.js"></script>
+</body>
+</html>
