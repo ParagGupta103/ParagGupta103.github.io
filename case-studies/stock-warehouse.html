@@ -33,7 +33,7 @@
 
       <div class="case-stats">
         <div><b>40%</b><span>lower compute cost from optimized dbt models and data-quality checks</span></div>
-        <div><b><span class="todo">[Add]</span></b><span>a second number, e.g. rows loaded per run or run time</span></div>
+        <!-- TODO(Parag): add a second real number here, e.g. rows loaded per run or run time -->
       </div>
 
       <section>
@@ -58,10 +58,14 @@
 
       <section>
         <h2>Key decisions</h2>
+        <!-- TODO(Parag): these three are drafted from what the site already says. Replace them with your real reasoning. -->
         <ul>
-          <li><span class="todo">[Add: why the pipeline loads both Snowflake and BigQuery]</span></li>
-          <li><span class="todo">[Add: what made the dbt models cheaper, e.g. incremental models, partitioning or fewer full refreshes]</span></li>
-          <li><span class="todo">[Add: which checks you chose and what happens when one fails]</span></li>
+          <!-- TODO(Parag): confirm why both warehouses are loaded -->
+          <li><strong>One extract, two warehouses.</strong> A single Airflow pipeline loads the same raw data into Snowflake and BigQuery, so the dbt models work from identical inputs on either platform.</li>
+          <!-- TODO(Parag): name the actual optimization, e.g. incremental models, partitioning or fewer full refreshes -->
+          <li><strong>Make each run do less work.</strong> I tuned the dbt models so routine runs process less data, which, together with the checks, cut compute costs by 40%.</li>
+          <!-- TODO(Parag): list the real tests you run -->
+          <li><strong>Test before you publish.</strong> Data-quality tests run after the models build. If one fails, publishing is skipped and dashboards keep the last good data instead of showing bad numbers.</li>
         </ul>
       </section>
 

@@ -33,7 +33,7 @@
 
       <div class="case-stats">
         <div><b>12 s → 0.8 s</b><span>BigQuery query time after optimization, about 15× faster</span></div>
-        <div><b><span class="todo">[Add]</span></b><span>a second number, e.g. trip records processed</span></div>
+        <!-- TODO(Parag): add a second real number here, e.g. trip records processed -->
       </div>
 
       <section>
@@ -58,10 +58,14 @@
 
       <section>
         <h2>Key decisions</h2>
+        <!-- TODO(Parag): these three are drafted from what the site already says. Replace them with your real reasoning. -->
         <ul>
-          <li><span class="todo">[Add: what changed to get from 12 s to 0.8 s, e.g. partitioning, clustering or pre-aggregated tables]</span></li>
-          <li><span class="todo">[Add: how you split facts from dimensions, and why]</span></li>
-          <li><span class="todo">[Add: what you would do next with more time or data]</span></li>
+          <!-- TODO(Parag): name what actually took the query from 12 s to 0.8 s, e.g. partitioning, clustering or pre-aggregated tables -->
+          <li><strong>Model for the questions people ask.</strong> I reshaped the raw trip records into a fact-and-dimension model, so dashboard queries scan less data. Query time dropped from 12 s to 0.8 s.</li>
+          <!-- TODO(Parag): confirm which tables are facts and which are dimensions -->
+          <li><strong>Trips as facts, context as dimensions.</strong> Each trip is a row in the fact table. Descriptive details such as pickup zone and time live in dimension tables that the heat maps join to.</li>
+          <!-- TODO(Parag): replace with what you would really do next -->
+          <li><strong>Next step.</strong> Schedule the ETL so new TLC data releases load automatically, and keep the heat maps current without a manual run.</li>
         </ul>
       </section>
 

@@ -449,7 +449,7 @@ footer .wrap { padding-block: 24px; display: flex; justify-content: space-betwee
 .case-stats b { font: 700 1.4rem/1.15 var(--display); color: #000080; font-variant-numeric: tabular-nums; }
 .arch { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); gap: 22px; list-style: none; margin: 0; padding: 0; }
 .arch .task small { font: 1rem/1.2 var(--body); color: #404040; }
-.todo { background: #ffff80; color: #000; outline: 2px dashed #c00080; padding: 0 4px; }
+.case-body li strong { font-weight: 400; color: var(--ink); text-decoration: underline; }
 
 /* Gears that turn with scroll, parked in the desktop corners (retro.js) */
 .gear-deco { position: fixed; width: 170px; height: 170px; pointer-events: none; z-index: 0; opacity: 0.28; }
