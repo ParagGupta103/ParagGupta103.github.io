@@ -456,7 +456,7 @@ footer .wrap { padding-block: 24px; display: flex; justify-content: space-betwee
 .gear-deco.a { left: -55px; bottom: 10px; }
 .gear-deco.b { right: -50px; top: 120px; width: 120px; height: 120px; }
 main { position: relative; z-index: 1; }
-.marquee { position: relative; z-index: 1; overflow: hidden; white-space: nowrap; background: var(--grad); background-size: 200% 100%; color: #000; font: 1.3rem var(--body); border: 3px ridge #ffd23f; }
+.marquee { position: relative; z-index: 1; overflow: hidden; white-space: nowrap; background: #000080; color: #fff; font: 1.3rem var(--body); border: 3px ridge #c0c0c0; }
 .marquee-track { display: inline-block; padding-block: 4px; animation: marquee 24s linear infinite; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
