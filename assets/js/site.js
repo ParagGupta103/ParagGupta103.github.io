@@ -569,7 +569,7 @@ const Demos = (function () {
   render();
 })();
 
-// ---------- Playground: pixel sprites + GitHub feed ----------
+// ---------- Playground: pixel sprites ----------
 (function () {
   const SPRITES = {
     heart: ['.aa...aa..', 'aaaa.aaaa.', 'aaaaaaaaa.', 'aaaaaaaaa.', 'aaaaaaaaa.', '.aaaaaaa..', '..aaaaa...', '...aaa....', '....a.....', '..........'],
@@ -603,31 +603,6 @@ const Demos = (function () {
     });
   }
   paint(); onTheme(paint);
-
-  // Snapshot of public, non-fork repos by last push (Oct 22, 2026), used when the live API can't be reached
-  const SNAPSHOT = [
-    ['Card_Game', null, '2026-07-11'], ['Grade-Crossing-Visual-Distractions-F26', 'Python', '2026-04-27'],
-    ['Movie-Recommendation-Engine', null, '2026-04-20'], ['NeetCodePractice', 'Python', '2026-04-17'],
-    ['MotoLens', 'Python', '2026-04-03'], ['Online-Bookstore', 'C#', '2026-03-31'],
-  ];
-  const ago = iso => {
-    const d = Math.max(0, Math.round((Date.now() - new Date(iso)) / 864e5));
-    return d < 1 ? 'today' : d < 45 ? `${d} day${d > 1 ? 's' : ''} ago` : d < 540 ? `${Math.round(d / 30.4)} months ago` : `${Math.round(d / 365)} years ago`;
-  };
-  function show(items, live) {
-    const st = $('feed-state');
-    st.classList.toggle('live', live);
-    st.lastElementChild.textContent = live ? 'live from api.github.com' : 'snapshot from Oct 22, 2026 · live on the real site';
-    $('feed').innerHTML = items.map(([name, lang, pushed]) =>
-      `<li><a href="https://github.com/ParagGupta103/${name}" target="_blank" rel="noopener">${name}</a><span>${ago(pushed)}</span><span class="lang">${lang || '—'}</span></li>`).join('');
-  }
-  show(SNAPSHOT, false);
-  const ctl = 'AbortController' in window ? new AbortController() : null;
-  if (ctl) setTimeout(() => ctl.abort(), 5000);
-  fetch('https://api.github.com/users/ParagGupta103/repos?sort=pushed&per_page=12', ctl ? { signal: ctl.signal } : {})
-    .then(r => r.ok ? r.json() : Promise.reject(r.status))
-    .then(repos => show(repos.filter(r => !r.fork && r.name !== 'ParagGupta103').slice(0, 6).map(r => [r.name, r.language, r.pushed_at]), true))
-    .catch(() => {});
 })();
 
 // ---------- Terminal ----------
