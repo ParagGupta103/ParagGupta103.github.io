@@ -251,10 +251,11 @@ const Journey = (function () {
   $('g-prev').addEventListener('click', () => go(active - 1));
   $('g-next').addEventListener('click', () => go(active + 1));
 
-  // three.js globe
+  // three.js globe, built only when it nears the viewport so the first paint stays light
   const box = $('globe');
-  const renderer = makeRenderer(box);
-  if (renderer) {
+  function initGlobe() {
+    const renderer = makeRenderer(box);
+    if (!renderer) return;
     const R = 1.5, ARC_N = 80;
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
@@ -271,7 +272,7 @@ const Journey = (function () {
       const i = r * 360 + c;
       return (mask.charCodeAt(i >> 3) >> (7 - (i & 7))) & 1;
     };
-    const dots = [], N = 26000, ga = Math.PI * (3 - Math.sqrt(5));
+    const dots = [], N = innerWidth < 700 ? 14000 : 26000, ga = Math.PI * (3 - Math.sqrt(5));
     for (let i = 0; i < N; i++) {
       const y = 1 - 2 * (i + 0.5) / N, lat = Math.asin(y) * 180 / Math.PI;
       const lon = ((i * ga * 180 / Math.PI) % 360) - 180;
@@ -362,7 +363,14 @@ const Journey = (function () {
       label.style.transform = `translate(${(tmp.x + 1) / 2 * box.clientWidth}px, ${(1 - tmp.y) / 2 * box.clientHeight}px)`;
       renderer.render(scene, camera);
     })(performance.now());
+    set(active);
   }
+  const nearGlobe = new IntersectionObserver(([e]) => {
+    if (!e.isIntersecting) return;
+    nearGlobe.disconnect();
+    initGlobe();
+  }, { rootMargin: '300px 0px' });
+  nearGlobe.observe(box);
   set(0);
   return { go, find: q => STOPS.findIndex(s => s.city.toLowerCase().startsWith(q.toLowerCase())) };
 })();

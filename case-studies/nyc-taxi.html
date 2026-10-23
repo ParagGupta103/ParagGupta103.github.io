@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NYC Taxi Analytics | Parag Gupta</title>
+<meta name="description" content="Case study: ETL over NYC TLC trip records into a fact-and-dimension model on GCP. BigQuery query time dropped from 12 s to 0.8 s.">
+<meta property="og:title" content="NYC Taxi Analytics | Parag Gupta">
+<meta property="og:description" content="ETL over NYC TLC trip records into a fact-and-dimension model on GCP. BigQuery query time dropped from 12 s to 0.8 s.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://paraggupta103.github.io/case-studies/nyc-taxi.html">
+<meta property="og:image" content="https://paraggupta103.github.io/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#008080" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b0a1f" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<main class="wrap case">
+  <a class="case-back" href="../index.html#projects">← Back to the portfolio</a>
+
+  <article class="case-win">
+    <div class="case-bar"><span>nyc_taxi.txt</span><span aria-hidden="true">_ □ ×</span></div>
+    <div class="case-body">
+      <header style="display:grid;gap:12px">
+        <span class="eyebrow dark">Case study · analytics engineering</span>
+        <h1>NYC Taxi Analytics</h1>
+        <p class="lede">ETL over NYC TLC trip records into a fact-and-dimension model on GCP, with Looker Studio heat maps of where and when the city rides.</p>
+      </header>
+
+      <div class="case-stats">
+        <div><b>12 s → 0.8 s</b><span>BigQuery query time after optimization, about 15× faster</span></div>
+        <div><b><span class="todo">[Add]</span></b><span>a second number, e.g. trip records processed</span></div>
+      </div>
+
+      <section>
+        <h2>Architecture</h2>
+        <ol class="arch">
+          <li class="task"><code>TLC trip records</code><small>NYC Taxi &amp; Limousine Commission data</small></li>
+          <li class="task"><code>pandas ETL</code><small>Cleans and reshapes the trips</small></li>
+          <li class="task"><code>BigQuery</code><small>Fact and dimension tables on GCP</small></li>
+          <li class="task"><code>Looker Studio</code><small>Heat maps of pickups</small></li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>What I built</h2>
+        <ul>
+          <li>An ETL pipeline over NYC TLC trip records, written with pandas.</li>
+          <li>A fact-and-dimension model in BigQuery on GCP.</li>
+          <li>Looker Studio heat maps on top of the model.</li>
+          <li>Query tuning that cut BigQuery query time from 12 s to 0.8 s.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Key decisions</h2>
+        <ul>
+          <li><span class="todo">[Add: what changed to get from 12 s to 0.8 s, e.g. partitioning, clustering or pre-aggregated tables]</span></li>
+          <li><span class="todo">[Add: how you split facts from dimensions, and why]</span></li>
+          <li><span class="todo">[Add: what you would do next with more time or data]</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Stack</h2>
+        <div class="tags"><span class="chip">GCP</span><span class="chip">BigQuery</span><span class="chip">pandas</span><span class="chip">Looker Studio</span><span class="chip">SQL</span></div>
+      </section>
+
+      <div class="links">
+        <a href="../index.html#demos">Explore the demo ↑</a>
+        <a href="https://github.com/ParagGupta103/NYC-Taxi-Data-Analysis" target="_blank" rel="noopener">Code ↗</a>
+        <a href="../resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </article>
+</main>
+<script src="../assets/js/retro.js"></script>
+</body>
+</html>

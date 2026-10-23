@@ -16,8 +16,9 @@ Personal portfolio of Parag Gupta, hosted on GitHub Pages.
 index.html                 page markup
 assets/css/site.css        styles (light and dark themes via prefers-color-scheme)
 assets/js/site.js          three.js scenes, demos, terminal
-assets/js/retro.js         scroll-driven gears, pipe dividers, ticker
-assets/img/                images
+assets/js/retro.js         boot screen, Start-menu taskbar, gears, pipe dividers, resume dialog
+assets/img/                images (og.png is the social preview card)
+case-studies/              one page per pipeline project
 resume.pdf                 linked from the hero and contact section
 ```
 

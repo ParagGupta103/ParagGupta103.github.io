@@ -9,6 +9,12 @@
 <meta property="og:description" content="Parag Gupta, software engineer. Cloud data pipelines and ML systems in Python, Java and SQL on AWS and GCP.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://paraggupta103.github.io/">
+<meta property="og:image" content="https://paraggupta103.github.io/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Parag Gupta, software engineer: cloud data pipelines and ML systems, in a retro Windows 98 window">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://paraggupta103.github.io/assets/img/og.png">
 <meta name="theme-color" content="#008080" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0b0a1f" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23131922'/%3E%3Ctext x='29' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='800' font-size='28' fill='%23fff'%3EPG%3C/text%3E%3Ccircle cx='52' cy='40' r='4' fill='%23ff9455'/%3E%3C/svg%3E">
@@ -18,20 +24,38 @@
 <link rel="stylesheet" href="assets/css/site.css">
 </head>
 <body>
-<nav>
-  <div class="wrap">
-    <a class="mono-mark" href="#top">PG<span>.</span></a>
-    <div class="nav-r">
-      <ul>
-        <li class="wide"><a href="#skills">Skills</a></li>
-        <li><a href="#journey">Journey</a></li>
-        <li><a href="#demos">Demos</a></li>
-        <li class="wide"><a href="#projects">Projects</a></li>
-        <li><a href="#playground">Play</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-      <button class="term-btn" data-term aria-label="Open terminal">&gt;_</button>
-    </div>
+<nav class="taskbar" aria-label="Site">
+  <button class="start" id="start-btn" type="button" aria-expanded="false" aria-controls="start-menu"><span class="logo" aria-hidden="true"></span>Start</button>
+  <div class="start-menu" id="start-menu" hidden>
+    <span class="side" aria-hidden="true">Parag OS 98</span>
+    <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#journey">Journey</a></li>
+      <li><a href="#demos">Demos</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#playground">Play</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="sep" role="separator"></li>
+      <li class="group">Case studies</li>
+      <li><a href="case-studies/stock-warehouse.html">Stock warehouse</a></li>
+      <li><a href="case-studies/nyc-taxi.html">NYC taxi analytics</a></li>
+      <li class="sep" role="separator"></li>
+      <li><a href="resume.pdf" target="_blank" rel="noopener">Resume</a></li>
+      <li><button type="button" data-term>Terminal</button></li>
+    </ul>
+  </div>
+  <ul class="tasks">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#demos">Demos</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#playground">Play</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="tray">
+    <button class="term-btn" type="button" data-term aria-label="Open terminal">&gt;_</button>
+    <span class="clock" id="clock"></span>
   </div>
 </nav>
 
@@ -153,7 +177,7 @@
             </div>
           </div>
           <div class="ml-photo" id="ml-photo">
-            <img src="assets/img/motolens-caliber.jpg" alt="A silver compact wagon photographed from the front left in a dark studio" width="720" height="467">
+            <img src="assets/img/motolens-caliber.jpg" alt="A silver compact wagon photographed from the front left in a dark studio" width="720" height="467" loading="lazy" decoding="async">
             <div class="grid"></div><div class="beam"></div>
             <span class="ml-tag" id="ml-tag">ResNet-50 · 196 classes · ready</span>
           </div>
@@ -254,7 +278,7 @@
             <h3>Stock Market Data Warehouse</h3>
             <p>Airflow pipelines loading Snowflake and BigQuery, with optimized dbt models and data-quality checks that cut compute costs by 40%.</p>
             <div class="tags"><span class="chip">Airflow</span><span class="chip">dbt</span><span class="chip">Snowflake</span><span class="chip">BigQuery</span></div>
-            <div class="links"><a href="#demos" data-demo="dag">Run the DAG ↑</a></div>
+            <div class="links"><a href="#demos" data-demo="dag">Run the DAG ↑</a><a href="case-studies/stock-warehouse.html">Case study →</a></div>
           </div>
         </article>
         <article class="card">
@@ -264,7 +288,7 @@ before  12.0 s<span class="bar hot"><span style="--w:100%"></span></span>after  
             <h3>NYC Taxi Analytics</h3>
             <p>ETL over NYC TLC trip records into a fact-and-dimension model on GCP, with Looker Studio heat maps. Query time in BigQuery dropped from 12 s to 0.8 s.</p>
             <div class="tags"><span class="chip">GCP</span><span class="chip">BigQuery</span><span class="chip">pandas</span><span class="chip">Looker Studio</span></div>
-            <div class="links"><a href="#demos" data-demo="taxi">Explore the demo ↑</a><a href="https://github.com/ParagGupta103/NYC-Taxi-Data-Analysis" target="_blank" rel="noopener">Code ↗</a></div>
+            <div class="links"><a href="#demos" data-demo="taxi">Explore the demo ↑</a><a href="case-studies/nyc-taxi.html">Case study →</a><a href="https://github.com/ParagGupta103/NYC-Taxi-Data-Analysis" target="_blank" rel="noopener">Code ↗</a></div>
           </div>
         </article>
       </div>
