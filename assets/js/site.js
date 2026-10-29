@@ -664,7 +664,7 @@ const Demos = (function () {
       ].join('\n'));
       line('A few commands are not listed.', 'dim');
     },
-    whoami() { line('Parag Gupta. Software engineer, Rutgers CS \'26 (Honors College).\nData & Automation Analyst at KW International, Carson, CA.\nPipelines, cloud, and the occasional car-recognizing neural net.'); },
+    whoami() { line('Parag Gupta. Data engineer, Rutgers CS \'26 (Honors College).\nData & Automation Analyst at KW International, Carson, CA.\nPipelines, cloud, and the occasional car-recognizing neural net.'); },
     ls(a) {
       if (a[0] === 'projects') return line(PROJECTS.join('    '));
       if (a[0] === 'jobs') return line(JOBS.join('    '));
